@@ -2,7 +2,7 @@
 
 ---
 # CPhasing-mod -- This is a modified version of C-Phasing
-CPhasing-mod is a modified version of C-Phasing, featuring the following enhancements:
+`CPhasing-mod` is a modified version of `C-Phasing`, featuring the following enhancements:
 
 1️⃣ Refactor the `nextflow + shell` pipeline to improve script readability and maintainability.
 
