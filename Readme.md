@@ -29,8 +29,13 @@
 ---
 
 # Other modified versions of the software
-⭐️ For the modified version of annotation tool `EviAnn`, please visit: https://github.com/linyuiz/EviAnn_update (Not recommended for now, currently under upgrade)  
-⭐️ For the modified version of TE transposon annotation tool `EDTA`, please visit: https://github.com/linyuiz/EDTA_update (Beta version)  
+⭐️ For the modified version of annotation tool `EviAnn`, please visit: 
+
+https://github.com/linyuiz/EviAnn_update (Not recommended for now, currently under upgrade)  
+
+⭐️ For the modified version of TE transposon annotation tool `EDTA`, please visit: 
+
+https://github.com/linyuiz/EDTA_update (Beta version)  
 
 ---
 
