@@ -29,13 +29,11 @@
 ---
 
 # Other modified versions of the software
-⭐️ For the modified version of annotation tool `EviAnn`, please visit: 
+⭐️ For the modified version of annotation tool `EviAnn`, please visit: [EviAnn-mod](https://github.com/linyuiz/EviAnn-mod) (Not recommended for now, currently under upgrade)  
 
-https://github.com/linyuiz/EviAnn_update (Not recommended for now, currently under upgrade)  
+⭐️ For the modified version of TE transposon annotation tool `EDTA`, please visit: [EDTA-mod](https://github.com/linyuiz/EDTA-mod) (Beta version)  
 
-⭐️ For the modified version of TE transposon annotation tool `EDTA`, please visit: 
-
-https://github.com/linyuiz/EDTA_update (Beta version)  
+⭐️ For the modified version of scaffolding tool `C-Phasing`, please visit: [CPhasing-mod](https://github.com/linyuiz/CPhasing-mod) (Beta version)   
 
 ---
 
