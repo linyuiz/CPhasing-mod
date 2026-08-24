@@ -29,7 +29,8 @@ CPhasing-mod is a modified version of C-Phasing, featuring the following enhance
 ---
 
 # Other modified versions of the software
-🚀For other modified versions of the software, please see: https://github.com/linyuiz/zgtools?tab=readme-ov-file#redesigned-software
+⭐️ For the modified version of annotation tool `EviAnn`, please visit: https://github.com/linyuiz/EviAnn_update (Not recommended for now, currently under upgrade)  
+⭐️ For the modified version of TE transposon annotation tool `EDTA`, please visit: https://github.com/linyuiz/EDTA_update (Beta version)  
 
 ---
 
