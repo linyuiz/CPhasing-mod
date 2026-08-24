@@ -4,14 +4,14 @@
 # CPhasing-mod -- This is a modified version of C-Phasing
 CPhasing-mod is a modified version of C-Phasing, featuring the following enhancements:
 
-1️⃣ Refactor the nextflow + shell pipeline to improve script readability and maintainability.
+1️⃣ Refactor the `nextflow + shell` pipeline to improve script readability and maintainability.
 
 2️⃣ Support simultaneous Hi-C/Pore-C clustering analysis across multiple data types, including but not limited to:
-minibwa, bwa-mem2, _chromap, chromap, pairs.gz, and bam formats. The pipeline should generate multiple outputs such as .agp, .hic, and .assembly files accordingly.
+`minibwa`, `bwa-mem2`, `_chromap`, `chromap`, `pairs.gz`, and `bam` formats. The pipeline should generate multiple outputs such as `.agp`, `.hic`, and `.assembly` files accordingly.
 
-3️⃣ Enable cross-compatibility among multiple .assembly files — they can share the same .hic file, while different .hic files differ only in interaction signal intensity, not in the underlying assembly structure.
+3️⃣ Enable cross-compatibility among multiple `.assembly` files — they can share the same `.hic` file, while different `.hic` files differ only in interaction signal intensity, not in the underlying assembly structure.
 
-4️⃣ Support both local execution and slurm cluster deployment, ensuring seamless job scheduling and resource management across environments.
+4️⃣ Support both `local` execution and `slurm` cluster deployment, ensuring seamless job scheduling and resource management across environments.
 
 5️⃣ Provide enhanced resumption capabilities for convenient continuation of interrupted runs, minimizing redundant computation and facilitating incremental updates.
 
