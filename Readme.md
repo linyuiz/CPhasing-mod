@@ -191,10 +191,10 @@ The main output files are as follows:
 │           │   ├── original.heatmap.pdf(png/svg)
 │           │   ├── use_hcr.sorted.heatmap.pdf(png/svg)
 │           │   └── without_hcr.sorted.heatmap.pdf(png/svg)
-│           ├── original.q*.hic                                 ⭐️ ①Juicebox: File-->Open
-│           ├── original.raw.assembly                           ⭐️ ②Juicebox: Assembly-->Import Map Assembly
-│           ├── use_hcr.review.assembly                         ⭐️ ③Juicebox: Assembly-->Import Modified Assembly
-│           └── without_hcr.review.assembly                     ⭐️ ③Juicebox: Assembly-->Import Modified Assembly
+│           ├── original.q*.hic                                 ⭐️ 1. Juicebox: File-->Open
+│           ├── original.raw.assembly                           ⭐️ 2. Juicebox: Assembly-->Import Map Assembly
+│           ├── use_hcr.review.assembly                         ⭐️ 3. Juicebox: Assembly-->Import Modified Assembly
+│           └── without_hcr.review.assembly                     ⭐️ 3. Juicebox: Assembly-->Import Modified Assembly
 └── stat
     └── Reads.stat.xls(txt)
 ```
