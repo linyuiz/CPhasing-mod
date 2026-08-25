@@ -1,7 +1,22 @@
 <div align="center"><img alt="image" src="https://github.com/user-attachments/assets/729a8e17-94a4-492a-8d01-c902303c06a1" width=45%/></div>
 
 ---
-# CPhasing-mod -- This is a modified version of C-Phasing
+## Introduction（CPhasing）
+⭐️[CPhasing original github](https://github.com/wangyibin/CPhasing)   
+One of the major problems with Hi-C scaffolding of polyploid genomes is a large proportion of ambiguous short-read mapping, leading to a high-level of switched or chimeric assemblies. Now, the long-read-based chromosome conformation capture technology, e.g., **Pore-C**, **HiFi-C**(**CiFi**), provides an effective way to overcome this problem. Here, we developed a new pipeline, namely `C-Phasing`, which is specifically tailored for polyploid phasing by leveraging the advantage of Pore-C or HiFi-C data. It also works on **Hi-C** or **Omni-C** data and **diploid** genome assembly.  
+  
+The advantages of `C-Phasing`:   
+- High speed.   
+- High anchor rate of genome. 
+- High accuracy of polyploid phasing. 
+
+![Summary_of_CPhasing](https://github.com/wangyibin/CPhasing/blob/main/pictures/Summary_of_CPhasing.png)
+
+More details please check the documentation:  
+[Documentation](https://wangyibin.github.io/CPhasing/) | [中文文档](https://wangyibin.github.io/CPhasing/zh)
+
+
+# Introduction（CPhasing-mod）
 `CPhasing-mod` is a modified version of `C-Phasing`, featuring the following enhancements:
 
 1️⃣ Refactor the `nextflow + shell` pipeline to improve script readability and maintainability.
