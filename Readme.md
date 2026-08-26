@@ -53,7 +53,7 @@ More details please check the documentation:
 
 # Installation
 ## Install with conda/mamba (Linux64) 
-To install, first download the latest distribution tarball：[zgtools-CPhasing-mod_*.tar.gz](https://github.com/linyuiz/CPhasing-mod/releases/download/v0.1/zgtools-CPhasing-mod_v0.1.tar.gz) (not one of the Source code files!) from the github release page：https://github.com/linyuiz/CPhasing-mod/releases/. 
+To install, first download the latest distribution tarball：[zgtools_latest.tar.gz](https://github.com/linyuiz/zgtools/releases) (not one of the Source code files!) from the github release page：https://github.com/linyuiz/CPhasing-mod/releases/. 
 
 ```shell
 #1. CPhasing install
@@ -70,7 +70,7 @@ tar -zxvf 3d-dna-201008.tar.gz
 #3. nextflow install
 mamba create -n nextflow -c conda-forge -c bioconda nextflow==22.10.6
 #4. zgtools CPhasing-mod install
-tar -zxvf zgtools-CPhasing-mod_v0.1.tar.gz && cd zgtools-CPhasing-mod_v0.1 && chmod +x zg*
+tar -zxvf zgtools*.tar.gz && cd zgtools && chmod +x zg*
 #5. add zgtools to your $PATH:
 echo "export PATH=$PWD:\$PATH" >>~/.bashrc && source ~/.bashrc
 zgtools CPhasing-mod
