@@ -157,7 +157,7 @@ cphasing_path=~/software/CPhasing_v0.3.2      #C-Phasing software path
 3ddna_path=~/software/3d-dna-201008           #3D-DNA software path
 ```
 2️⃣ Then, run `zgtools CPhasing-mod example_cfg`. If want to stop the job, please press `Ctrl + C`, not​ `Ctrl + Z`.           
-🚀 Now, CPhasing-mod can perform Hi-C scaffolding and Pore-C scaffolding simultaneously!!         
+🚀 Now, `CPhasing-mod` can perform Hi-C scaffolding and Pore-C scaffolding simultaneously!!         
 
 # Run log
 
