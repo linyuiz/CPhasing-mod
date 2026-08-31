@@ -119,6 +119,7 @@ fastp_threads=16                              #fastp threads
 ##C-Phasing
 ☆cphasing_hyperpartition_mode=haploid        #hyperpartition mode(haploid|phasing)
 ☆cphasing_hic_aligner=_chromap               #chromap|bwa-mem2|minibwa
+☆cphasing_porec_aligner=mm2plus              #minimap2|mm2plus
 ☆cphasing_threads=30                         #number of threads
 ☆cphasing_restriction_enzyme=GATC            #REs: GATC|AAGCTT
 ☆cphasing_input_hic_R1=00.data/hic_R1.fq.gz  #Hi-C data read1(R1.fq.gz)
