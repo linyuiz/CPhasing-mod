@@ -62,7 +62,7 @@ mamba create -n cphasing && conda activate cphasing
 wget -c https://github.com/wangyibin/CPhasing/releases/download/v0.3.2/CPhasing.v0.3.2.r312.linux-64.tar.gz
 tar -zxvf CPhasing.v0.3.2.r312.linux-64.tar.gz && cd CPhasing_v0.3.2
 sed -i '1d' environment.yml && mamba env update -f environment.yml
-mamba install fastp networkx=3.4.2 seqkit=2.13.0 seqtk
+mamba install fastp networkx=3.4.2 seqkit=2.13.0 seqtk mm2plus
 #2. download 3D-DNA
 ##cd ~/software
 wget -c https://github.com/aidenlab/3d-dna/archive/refs/tags/201008.tar.gz
