@@ -156,7 +156,8 @@ conda_path=~/miniconda3                       #conda envs path
 cphasing_path=~/software/CPhasing_v0.3.2      #C-Phasing software path
 3ddna_path=~/software/3d-dna-201008           #3D-DNA software path
 ```
-2️⃣ Then, run `zgtools CPhasing-mod example_cfg`. If want to stop the job, please press `Ctrl + C`, not​ `Ctrl + Z`.            
+2️⃣ Then, run `zgtools CPhasing-mod example_cfg`. If want to stop the job, please press `Ctrl + C`, not​ `Ctrl + Z`.           
+🚀 Now, CPhasing-mod can perform Hi-C scaffolding and Pore-C scaffolding simultaneously!!         
 
 # Run log
 
@@ -166,31 +167,32 @@ This is the command【`zgtools CPhasing-mod Run_CPhasing.cfg`】runtime log:
 ##Info
 ☆data_work_mode=slurm                        #local or slurm
 ☆data_genome_fa=00.data/genome.fa            #genome file
-data_fastp_run_mode=yes                       #whether fastp filter HiC data(yes|no)
+data_fastp_run_mode=no                        #whether fastp filter HiC data(yes|no)
 data_3ddna_run_mode=yes                       #whether create .hic file(yes|no)
-☆data_parallel_task_num=2                    #parallel task num
-☆data_each_group_chr_num=27                  #each group chr number
+☆data_parallel_task_num=4                    #parallel task num
+☆data_each_group_chr_num=23                  #each group chr number
 ☆data_total_group_number=1                   #total group number
 ##Fastp
-fastp_threads=16                              #fastp threads
+fastp_threads=60                              #fastp threads
 ##C-Phasing
 ☆cphasing_hyperpartition_mode=haploid        #hyperpartition mode(haploid|phasing)
-☆cphasing_hic_aligner=_chromap,minibwa,bwa-mem2  #chromap|bwa-mem2|minibwa
-☆cphasing_threads=30                         #number of threads
-☆cphasing_restriction_enzyme=GATC            #GATC|AAGCTT
-☆cphasing_input_hic_R1=00.data/hic_R1.fq.gz  #Hi-C data read1
-☆cphasing_input_hic_R2=00.data/hic_R2.fq.gz  #Hi-C data read2
-cphasing_input_pairs=none                     #4DN pairs file
-cphasing_input_bam=none                       #pre-align bam file
-cphasing_input_porec=none                     #Pore-C/CiFi data(FASTX[.gz]|BAM)
+☆cphasing_hic_aligner=minibwa,chromap        #chromap|bwa-mem2|minibwa
+☆cphasing_porec_aligner=mm2plus              #minimap2|mm2plus
+☆cphasing_threads=60                         #number of threads
+☆cphasing_restriction_enzyme=GATC            #REs: GATC|AAGCTT
+☆cphasing_input_hic_R1=00.data/hic_R1.fq.gz  #Hi-C data read2(R1.fq.gz)
+☆cphasing_input_hic_R2=00.data/hic_R2.fq.gz  #Hi-C data read2(R2.fq.gz)
+cphasing_input_pairs=none                     #4DN pairs file(input.pairs.gz)
+cphasing_input_bam=none                       #pre-align bam file(input.align.bam)
+cphasing_input_porec=00.data/pore-c.fq.gz     #disable: Pore-C data(FASTX[.gz]|BAM)
 cphasing_hic_mapper_k=17                      #mapper's kmer size(>8G, use 27)
 cphasing_hic_mapper_w=7                       #mapper's window size>8G, use 14)
 cphasing_hcr_mode=yes                         #retain high confident area(yes|no)
 cphasing_hyperpartition_q1=0                  #first cluster min quality(0<=x<=60)
 cphasing_hyperpartition_q2=1                  #second cluster min quality(0<=x<=60)
-cphasing_scaffolding_method=precision         #cphasing|allhic|fast
+cphasing_scaffolding_method=precision         #scaf_method(cphasing|allhic|fast)
 cphasing_plot_binsize=auto                    #bin size of the heatmap(100k|500k|1m)
-cphasing_plot_colormap=whitered               #redp1_r_half|whitered
+cphasing_plot_colormap=whitered               #colormap(redp1_r_half|whitered)
 cphasing_plot_balance=yes                     #balance the matrix(yes|no)
 cphasing_plot_whitered=yes                    #--scale none -cmap whitered(yes|no)
 cphasing_plot_no_lines=no                     #whether use --no-lines(yes|no)
@@ -200,65 +202,63 @@ cphasing_plot_fontsize=auto                   #heatmap figure font size(auto|5|1
 cphasing_plot_dpi=300                         #plot figure dpi(150|300)
 cphasing_low_memory=yes                       #reduce memory hyperpartition(yes|no)
 ##3D-DNA
-3ddna_mapq=1,0                                #build map for a specific mapq(0|1)
+3ddna_mapq=1                                  #build map for a specific mapq(0|1)
 3ddna_java_xms=50G                            #java initial heap size
 3ddna_java_xmx=750G                           #java maximum heap size
 3ddna_min_resolutions=5000                    #minimum resolutions(1000|5000|10000)
 3ddna_clean_run_mode=no                       #clean up when done(yes|no)
 ##CondaEnv
-cphasing_env_name=cphasing                    #C-Phasing env name
-nextflow_env_name=nextflow                    #nextflow env name
 conda_path=~/miniconda3                       #conda envs path
+nextflow_env_name=nextflow                    #nextflow env name
+cphasing_env_name=cphasing                    #C-Phasing env name
 cphasing_path=~/software/CPhasing_v0.3.2      #C-Phasing software path
 3ddna_path=~/software/3d-dna-201008           #3D-DNA software path
 
 #######Run#######
 1.1. deal with input data ...
-[65/69749e] process > cphasing (deal_with) [100%] 1 of 1 ✔
-Duration    : 35m 17s
+Pore-C Statistics:
+Seqs_Num    Total_Length(bp)  N50(bp)  Q20(%)  Q30(%)
+26,115,610  91,121,862,988    4,326    89.24   81.27
 
-Raw_reads   Raw_bases       Clean_reads  Clean_bases     Q20_rate  Q30_rate
-75,947,702  11,344,186,400  75,947,702   11,344,186,400  98.977%   97.433%
-1.2. copy hic cleandata ...
-2 file(s) (  4.7 GiB) copied in  2m  1.8s ( 39.1 MiB/s).
+Hi-C Statistics:
+Raw_reads      Raw_bases        Clean_reads    Clean_bases      Q20_rate  Q30_rate
+1,568,492,706  235,273,905,900  1,567,058,336  234,673,429,504  97.925%   96.526%
+
 2.1. build genome index ...
-[c2/5e954a] process > index (minibwa) [100%] 3 of 3 ✔
-Duration    : 31m 1s
-
 2.2. align genome to Hi-C/Pore-C data ...
-[68/c40504] process > align (bwa-mem2) [100%] 3 of 3 ✔
-Duration    : 1h 12m 32s
+[25/16a5ac] process > align (minimap2) [100%] 3 of 3 ✔
+Duration    : 22h 25m 52s
 
 2.3. retain high confidence regions to analysis ...
-[74/19ec75] process > hcr (minibwa) [100%] 3 of 3 ✔
-Duration    : 3m 36s
+[88/abe74b] process > hcr (chromap) [100%] 3 of 3 ✔
+Duration    : 14m 21s
 
 2.4. convert pairs to contacts ...
-[b6/0b5961] process > convert_contacts (minibwa)  [100%] 3 of 3 ✔
-Duration    : 1m 11s
+[97/57acf8] process > convert_contacts (chromap) [100%] 3 of 3 ✔
+Duration    : 8m 31s
 
 3.1. running hyperpartition with【haploid】mode ...
-[29/87cb29] process > hyperpartition (minibwa) [100%] 3 of 3 ✔
-Duration    : 7m 56s
+[30/d083b6] process > hyperpartition (minibwa) [100%] 3 of 3 ✔
+Duration    : 11m 36s
 
 3.2. running scaffolding with【precision】method ...
-[5a/705f46] process > scaffolding (bwa-mem2) [100%] 3 of 3 ✔
-Duration    : 14m 41s
+[3c/3c16db] process > scaffolding (minimap2) [100%] 3 of 3 ✔
+Duration    : 5m 21s
 
 3.3. resort chromosomes by hic cool file ...
-[03/3df570] process > resort_chr (_chromap) [100%] 3 of 3 ✔
-Duration    : 6m 26s
+[d4/f250ae] process > resort_chr (minimap2) [100%] 3 of 3 ✔
+Duration    : 8m 11s
 
 4. generate heatmap figure ...
-[2d/ebe68a] process > heatmap_plot (bwa-mem2) [100%] 3 of 3 ✔
-Duration    : 6m 16s
+[89/75e8fc] process > heatmap_plot (chromap) [100%] 3 of 3 ✔
+Duration    : 12m 16s
 
 5. 3d-dna generate .hic file for juicebox ...
-[3f/755ced] process > juicebox (minibwa/q0) [100%] 6 of 6 ✔
-Duration    : 42m 1s
+[6f/76cdfd] process > juicebox (minimap2/q1) [100%] 3 of 3 ✔
+Duration    : 1h 5m 36s
 
 #######Results#######
-Output: ~/output_of_CPhasing-mod/
+Output: /test/output_of_CPhasing-mod/
 ```
 The Nextflow execution trace in the diagram has been hidden. For the specific time consumed by each process, please refer to the actual run .log file.    
 ⭐️The above tests were conducted on four nodes, each with 1TB of memory and 256 threads.
