@@ -99,7 +99,6 @@ Example3:
 
         zgtools CPhasing-mod help
 ```
-⭐️Note that the total Threads are threads multiplied by Parallel Task Num, for example: 60 x 3 = 180 threads.    
 
 ---
 
