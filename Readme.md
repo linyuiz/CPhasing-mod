@@ -53,7 +53,7 @@ More details please check the documentation:
 
 # Installation
 ## Install with conda/mamba (Linux64) 
-To install, first download the latest distribution tarball：[zgtools_latest.tar.gz](https://github.com/linyuiz/zgtools/releases) (not one of the Source code files!) from the github release page：https://github.com/linyuiz/CPhasing-mod/releases/. 
+To install, first download the latest distribution tarball：[zgtools_latest.tar.gz](https://github.com/linyuiz/zgtools/releases) (not one of the Source code files!) from the github release page：https://github.com/linyuiz/zgtools/releases/. 
 
 ```shell
 #1. CPhasing install
