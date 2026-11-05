@@ -12,7 +12,6 @@ The advantages of `C-Phasing`:
 More details please check the documentation:  
 [Documentation](https://wangyibin.github.io/CPhasing/) | [中文文档](https://wangyibin.github.io/CPhasing/zh)
 
-
 # Introduction（CPhasing-mod）
 `CPhasing-mod` is a modified version of `C-Phasing`, featuring the following enhancements:
 
@@ -38,16 +37,12 @@ More details please check the documentation:
 - And ALLHiC
     > Xingtan Zhang, Shengcheng Zhang, Qian Zhao, Ray Ming, Haibao Tang. (2019) Assembly of allele-aware, chromosomal-scale autopolyploid genomes based on Hi-C data. Nature Plants, 5:833-845. doi: https://doi.org/10.1038/s41477-019-0487-8
 
----
-
 # Other modified versions of the software
 ⭐️ [**CPhasing-mod**](https://github.com/linyuiz/CPhasing-mod): Revised version of the genome scaffolding software [**C-Phasing**](https://wangyibin.github.io/CPhasing/).
 
 ⭐️ [**EDTA-mod**](https://github.com/linyuiz/EDTA-mod): Revised version of the TE annotation software [**EDTA**](https://github.com/oushujun/EDTA).
 
 ⭐️ [**GINGER-mod**](https://github.com/linyuiz/GINGER-mod): Revised version of the genome annotation software [**GINGER**](https://github.com/i10labtitech/GINGER).
-
----
 
 # Installation
 <p align="center"><strong>[ <a href="https://github.com/linyuiz/zgtools/wiki/English">English Wiki</a> | <a href="https://github.com/linyuiz/zgtools/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">中文维基</a> ]</strong></p>
